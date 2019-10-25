@@ -78,6 +78,18 @@ from 1 million to 10 million. Perhaps it is processing much larger volumes of da
 
 > Scalability is the term we use to describe a system’s ability to cope with increase load.
 
+## Describing Load
+
+- First, we need to clearly describe the current load on the system;
+- then can we discuss growth questions
+
+- Load can be described with a few numbers which we call load parameters.
+  - it may be requests per second to a web server
+  - the ratio of reads to writes in a database
+  - number of simultaneously active users in a chat room
+  - hit rate on a cache etc.
+- 
+
 
 
 
