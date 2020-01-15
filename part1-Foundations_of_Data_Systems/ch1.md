@@ -80,15 +80,79 @@ from 1 million to 10 million. Perhaps it is processing much larger volumes of da
 
 ## Describing Load
 
-- First, we need to clearly describe the current load on the system;
-- then can we discuss growth questions
+Examples of key load parameter:
+  - Requests per second
+  - Ratio of read and writes in database.
+  - Number of simultaneous active users in chat room.
+  - Hit rate on cache.
 
-- Load can be described with a few numbers which we call load parameters.
-  - it may be requests per second to a web server
-  - the ratio of reads to writes in a database
-  - number of simultaneously active users in a chat room
-  - hit rate on a cache etc.
-- 
+In the above use-case, distribution of followers per user is the key load parameter. 
+
+
+## Describe Performance
+
+Investigate what happens when the load increases. 
+
+2 ways: 
+  - When you increase a load param, by keeping system resource (CPU, memory, network bandwidth) fix, how is the performance of your system affected?
+  - When you increase a load param, how much do you need to increase resource if you want to keep performance unchanged?
+
+Throughput: 
+  - Number of records we can process per second.  
+  - Or, total time it takes to process a dataset of certain size.
+
+Response time:
+  - Time between a client sending a request and receiving response. 
+  - This is what client sees; besides actual time to process the request, it includes network delay, queueing delays.
+
+
+Latency:
+  - Not same as response time. 
+  - Is the duration that a request is waiting to be handled.
+  - For instance, you want to invoke a web service or access a web page. Apart from the processing time that is needed on the server to process your request, there is a delay  - involved for your request to reach to server. While referring to Latency, it’s that delay we are talking about.
+
+> Even if you make same request over and over again, you will get slightly different response time. 
+
+*Mean* is not a very good metric if you want to know your “typical” response time since it does not tell how many users actually experienced that delay. 
+
+*Percentile* is better. If you take your list of response time and sort it from fastest to slowest, then median  will tell how long half of the users have to wait; half of the users are served in median response time. *Median* is also known as the *50th percentile*.
+
+> Median can be good metric to measure performance
+
+## Approaches for Coping with Load
+
+- Vertical scale (scaling up) 
+  - Moving to more powerful machine.
+  - Single point of failure
+  - No load balancer required
+  - [IPC](https://www.youtube.com/watch?v=dJuYKfR8vec) - which is fast
+  - Single source of truth
+  - Expensive 
+
+- Horizontal scale (scaling out) 
+  - Distributing the load across multiple smaller machines.
+  - Resilient
+  - Load balancer required since there are multiple machines.
+  - Network calls ([RPC](https://www.youtube.com/watch?v=QmhTjsOOrlw)) - slow 
+  - No single source of truth - data consistency is the issue since
+
+## Maintainability 
+
+  - Make it easy for operations teams to keep the system running smoothly
+  - Make it easy for new engineers to understand the system, by removing complexity.
+  - Make it easy for engineers to make changes to the system in the future.
+    - Test driven development
+    - Refactoring
+
+
+Notes/References
+- [DESIGNING SCALABLE SYSTEMS – PART 1: THE BASICS](https://hexadix.com/design-scalable-systems-part-1-the-basics/)
+- [IPC](https://www.youtube.com/watch?v=dJuYKfR8vec)
+- [Note: use IPC if the processes are on different systems](https://stackoverflow.com/questions/3742334/using-ipc-for-different-systems)
+- [RPC](https://www.youtube.com/watch?v=QmhTjsOOrlw)
+
+
+
 
 
 
