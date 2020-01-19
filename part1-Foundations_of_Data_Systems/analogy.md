@@ -30,8 +30,8 @@ There is a road between point A and B. The road has capacity to accomodate `4` c
 
 Then here, 
 
-Processing time: 5s
-Response time: 7s
-Latency: 2s
-Throughtput: 4
+- Processing time: `5s`
+- Response time: `7s`
+- Latency: `2s`
+- Throughtput: `4`
 
