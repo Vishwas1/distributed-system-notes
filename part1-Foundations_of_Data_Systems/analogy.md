@@ -12,7 +12,22 @@
 **Throughput:** Number of records we can process per second.  
 
 
-## Analogy
+## Analogy 
+
+### Office work
+
+You start from your home to office. Going from home to office, takes `10 mins` walk. Then you work in office for say, 1hr or `60 mins` and then you come back home by another `10 mins` walk.
+
+In this case
+
+
+Then here, 
+
+- Processing time: `60 mins`
+- Response time: 10 + 60 + 10 = `80 mins`
+- Latency: `20 mins`
+
+### Road 
 
 There is a road between point A and B. The road has capacity to accomodate `4` cars at a time. Say, there are `4` cars standing in garrage and it takes `2s` for them to reach point A from the garrage. Once started from point A, it takes `5s` for them to reach B. A guy standing at point B, sees the cars at `7s` ultimately.
 
@@ -50,4 +65,3 @@ Then here,
 - Response time: `7s`
 - Latency: `2s`
 - Throughtput: `4`
-
