@@ -24,7 +24,7 @@ There is a road between point A and B. The road has capacity to accomodate `4` c
   [__]
   [__]
   ---------------------------------------------------------- 
-  A <-------------------- 5s ----------------------------> B
+  A                                                        B
 
 ```
 
