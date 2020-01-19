@@ -16,6 +16,7 @@
 
 There is a road between point A and B. The road has capacity to accomodate `4` cars at a time. Say there are 4 cars standing at point A, ready to move towards point B. And if everything is fine, then it takes `5s` for cars to reach B from point A. But dues to potholes in between, a guy standing at point B, sees the cars at `7s`.
 
+```
   ----------------------------------------------------------
   [__]
   [__]
@@ -24,6 +25,8 @@ There is a road between point A and B. The road has capacity to accomodate `4` c
   [__]
   ---------------------------------------------------------- 
   A <-------------------- 5s ----------------------------> B
+
+```
 
 Then here, 
 
