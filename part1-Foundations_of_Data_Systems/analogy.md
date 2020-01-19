@@ -14,17 +14,33 @@
 
 ## Analogy
 
-There is a road between point A and B. The road has capacity to accomodate `4` cars at a time. Say there are 4 cars standing at point A, ready to move towards point B. And if everything is fine, then it takes `5s` for cars to reach B from point A. But dues to potholes in between, a guy standing at point B, sees the cars at `7s`.
+There is a road between point A and B. The road has capacity to accomodate `4` cars at a time. Say, there are `4` cars standing in garrage and it takes `2s` for them to reach point A from the garrage. Once started from point A, it takes `5s` for them to reach B. A guy standing at point B, sees the cars at `7s` ultimately.
 
 ```
-  ----------------------------------------------------------
-  [__]
-  [__]
+Cars waiting in garrage (at time 0):
+[_a_], [_b_], [_c_], [_d_]
+
+Cars ready to move (at time 2s):
+
+  -----------------------------------------------------------
+  [_a_]
+  [_b_]
   --      --      --      --      --      --      --      --
-  [__]
-  [__]
-  ---------------------------------------------------------- 
-  A                                                        B
+  [_c_]
+  [_d_]
+  -----------------------------------------------------------
+  A                                                         B
+
+Cars reached the destination (at time 7s):
+
+  -----------------------------------------------------------
+                                                        [_a_]
+                                                        [_b_]
+  --      --      --      --      --      --      --      --
+                                                        [_c_]
+                                                        [_d_]
+  -----------------------------------------------------------
+  A                                                         B
 
 ```
 
