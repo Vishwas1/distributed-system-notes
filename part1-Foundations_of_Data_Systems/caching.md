@@ -25,10 +25,10 @@ Loading or evicting data is called **caching policy**.
 
 ### Cache writing policies
 
-- write-through 
+- **write-through**
   - Data is written to the cache and the backing store location at the same time. The significance here is not the order in which it happens or whether it happens in parallel. 
-- write-back
-  - Data is written to cache after its been written to store.
+- **write-back**
+  - Data is written to the cache and Then I/O completion is confirmed. The data is then typically also written to the backing store in the background but the completion confirmation is not blocked on that.
   
 
-
+https://shahriar.svbtle.com/Understanding-writethrough-writearound-and-writeback-caching-with-python
